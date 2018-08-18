@@ -1,0 +1,11 @@
+eclipsec.exe -nosplash -verbose -application org.eclipse.equinox.p2.metadata.repository.mirrorApplication -source http://download.eclipse.org/eclipse/updates/4.7 -destination C:\Users\ken\tmp\eclipse-updates-4.7 
+eclipsec.exe -nosplash -verbose -application org.eclipse.equinox.p2.artifact.repository.mirrorApplication -source http://download.eclipse.org/eclipse/updates/4.7 -destination C:\Users\ken\tmp\eclipse-updates-4.7 
+eclipsec.exe -nosplash -verbose -application org.eclipse.equinox.p2.metadata.repository.mirrorApplication -source http://p2.restlet.com/2.3 -destination C:\Users\ken\tmp\restlet-2.3
+eclipsec.exe -nosplash -verbose -application org.eclipse.equinox.p2.artifact.repository.mirrorApplication -source http://p2.restlet.com/2.3 -destination C:\Users\ken\tmp\restlet-2.3
+eclipsec.exe -nosplash -verbose -application org.eclipse.equinox.p2.metadata.repository.mirrorApplication -source http://download.eclipse.org/jetty/updates/jetty-bundles-9.x/9.4.9.v20180320 -destination C:\Users\ken\tmp\jetty-bundles-9.4.9.v20180320
+eclipsec.exe -nosplash -verbose -application org.eclipse.equinox.p2.artifact.repository.mirrorApplication -source http://download.eclipse.org/jetty/updates/jetty-bundles-9.x/9.4.9.v20180320 -destination C:\Users\ken\tmp\jetty-bundles-9.4.9.v20180320
+eclipsec.exe -nosplash -verbose -application org.eclipse.equinox.p2.metadata.repository.mirrorApplication -source http://download.eclipse.org/tools/orbit/downloads/drops/R20180330011457/repository -destination C:\Users\ken\tmp\orbit-R20180330011457
+eclipsec.exe -nosplash -verbose -application org.eclipse.equinox.p2.artifact.repository.mirrorApplication -source http://download.eclipse.org/tools/orbit/downloads/drops/R20180330011457/repository -destination C:\Users\ken\tmp\orbit-R20180330011457
+
+mvn -DforceContextQualifier=v2018 verify
+mvn verify -P online 

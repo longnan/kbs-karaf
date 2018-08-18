@@ -1,0 +1,7 @@
+syntax: glob
+com.kylinsystems.idempiere.karaf.feature/target/
+com.kylinsystems.idempiere.karaf.repo/target/
+/com.kylinsystems.kbs.karaf.feature/target/
+/com.kylinsystems.kbs.karaf.repo/target/
+/kbs.karaf.feature/target/
+/kbs.karaf.repo/target/

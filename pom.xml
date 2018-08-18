@@ -1,0 +1,98 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.kylinsystems.kbs.karaf</groupId>
+    <artifactId>com.kylinsystems.kbs.karaf</artifactId>
+    <version>5.1.0.v2018</version>
+    <packaging>pom</packaging>
+    <name>kbs :: karaf-all</name>
+    <description>Parent Project for KBS Karaf Package</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.test.failure.ignore>true</maven.test.failure.ignore>
+
+        <!-- dependencies library version -->
+        <karaf.version>4.1.6</karaf.version>
+        
+        <!-- refer to mvn -DforceContextQualifier=v2018 verify -->
+        <!-- refer to etc/org.apache.karaf.features.cfg -->
+        <kbs.build.version>${project.version}</kbs.build.version>
+        
+        <!-- refer to kbs-server/Server.Dockerfile -->
+        <idempiere.plugin.path>idempiere-server/plugins</idempiere.plugin.path>
+        
+        <!-- refer to kbs-server/Server.Dockerfile & etc/org.ops4j.pax.url.mvn.cfg-->
+        <kbs.bundles.repository>kbs.karaf.repository</kbs.bundles.repository>
+    </properties>
+
+    <modules>
+        <module>kbs.karaf.feature</module>
+        <module>kbs.karaf.repo</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.5.1</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>maven-huaweicloud</id>
+            <name>Huaweiloud repository</name>
+            <url>https://mirrors.huaweicloud.com/repository/maven/</url>
+        </repository>       
+        <repository>
+            <id>maven-restlet</id>
+            <name>Restlet repository</name>
+            <url>http://maven.restlet.com</url>
+        </repository>
+        <!-- 
+        <repository>
+            <id>oss.sonatype.org</id>
+            <url>https://oss.sonatype.org/content/repositories/releases</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>opencast-public</id>
+            <url>http://repository.opencastproject.org/nexus/content/repositories/public/</url>
+        </repository>-->
+        <!--        <repository>
+            <id>ZK CE</id>
+            <name>ZK CE Repository</name>
+            <url>http://mavensync.zkoss.org/maven2</url>
+        </repository>         -->
+        <!--        <repository>
+            <id>ZK PEEE Evaluation</id>
+            <url>http://mavensync.zkoss.org/eval/</url>
+        </repository>        -->
+        <!--        <repository>
+            <id>mvnrepo</id>
+            <url>http://mvnrepository.com</url>
+        </repository>-->
+        <repository>
+            <id>ZK CE</id>
+            <name>ZK CE Repository</name>
+            <url>http://mavensync.zkoss.org/maven2</url>
+        </repository>
+    </repositories>
+
+</project>
